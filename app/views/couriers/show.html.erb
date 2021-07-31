@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p class="courier_title">
+  <%= @courier.name %>
+</p>
+
+<p class="courier_sub_title">
+  <%= @courier.email %>
+</p>
+
+<div id="packages_wrapper">
+  <%= render @courier.packages %>
+  <br />
+  <p class="courier_title">
+    Add new package
+  </p>
+
+  <div id="form">
+    <%= render "packages/form" %>
+  </div>
+</div>
+
+<div class="links">
+  <%= link_to 'Edit', edit_courier_path(@courier) %> |
+  <%= link_to 'Back', couriers_path %>
+</div>

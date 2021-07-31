@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p class="couriers_title">Couriers</p>
+<% @couriers.each do |courier| %>
+  <div class="index_row clearfix">
+    <h2 class="courier_title"><%= link_to courier.name, courier %></h2>
+    <p class="courier_sub_title"><%= courier.email %></p>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to "Add courier", new_courier_path %>
+</div>
