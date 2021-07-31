@@ -1,0 +1,37 @@
+<div class="row clearfix">
+  <% if package.delivery_status? %>
+    <div class="done">
+      <%= link_to delivery_status_courier_package_path(@courier, package.id), method: :patch do %>
+      <i style ="opacity: 0.4;" class="fa fa-check"></i>
+      <% end %>
+    </div>
+    <div class="package">
+      <p style="opacity: 0.4;">
+        <%= package.tracking_number %>
+        <%= package.delivery_status %>
+      </p>
+    </div>
+    <div class="trash">
+      <%= link_to courier_package_path(@courier, package.id), method: :delete, data: { confirm: "Are u sure?"} do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="done">
+      <%= link_to delivery_status_courier_package_path(@courier, package.id), method: :patch  do %>
+          <i class="fa fa-check"></i>
+      <% end %>
+    </div>
+    <div class="package">
+      <p>
+        <%= package.tracking_number %>
+        <%= package.delivery_status %>
+      </p>
+    </div>
+    <div class="trash">
+      <%= link_to courier_package_path(@courier, package.id), method: :delete, data: { confirm: "Are u sure?"} do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+    <% end %>
+</div>

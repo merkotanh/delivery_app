@@ -1,0 +1,5 @@
+<%= form_for ([@courier, @courier.packages.build]) do |f| %>
+  Tracking number <%= f.text_field :tracking_number %><br />
+  Delivery status <%= f.check_box :delivery_status %><br />
+  <%= f.submit %><br /><br />
+<% end %>
